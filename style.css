@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pixelify+Sans&family=Teko:wght@300;400;500;600;700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.big-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 50vh;
+
+    border-radius: 10px;
+    background: #DCE1DE;
+}
+    .card img{
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+        border-radius: 10px 10px 0px 0px;
+    }
+    .card .info{
+        flex: 1;
+        padding: 20px;
+    }
+
+    .card .boxBtn{
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        width: 100%;
+    }
+    .card button{
+        padding: 10px 20px;
+        outline: 2px solid #fff;
+        border: none;
+        color: #fff;
+        border-radius: 10px 0px;
+        background: #1F2421;
+    }
+    .card button a{
+        color: #fff;
+    }
+
+.video{
+    padding: 20px;
+}
+.video video{
+    width: 100%;
+    height: 100%;
+}
