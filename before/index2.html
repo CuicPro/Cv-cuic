@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV</title>
+
+  <link rel="stylesheet" href="style2.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/104/three.js"></script>
+  <script src="GLTFLoader.js"></script>
+  <script src="OrbitControls.js"></script>
+
+</head>
+<body>
+  <!-- <div class="logoContainer">
+    <img class="logoPop" src="img/Logo-Nuage-Cuic.png" alt="logo">
+  </div> -->
+  <nav>
+    <a href="#Acceuil">Acceuil</a>
+    <a href="#Dîplome">Dîplome</a>
+    <a href="#Experiance">Experience</a>
+    <a href="#Contact">Me Contacter</a>
+  </nav>
+  <section id="Acceuil">
+      <div class="gauche">
+      </div>
+      <div class="droite">
+        <!-- <canvas id="myCanvas"></canvas> -->
+      </div>
+      <div class="card">
+        <div class="gauche">
+          <div class="effet"><img src="img/ppdiscord.jpg" alt="Photo de profile"></div>
+
+          <h3>Cuic</h3>
+          <span></span>
+          <h4>Développeur-freelance</h4>
+        </div>
+        <div class="droite">
+          <div class="info">
+            <h1>Mon CV</h1>
+            <h3>Qui suis-je ? Que fais-je ?</h3>
+            <p class="description">Je suis un petit développeur-web de 15ans, nommé Adrien Buch plus connu sous le nom de "Cuic".
+              je développe maintenant depuis 1ans et demi.
+            </p>
+          </div>
+          <footer>
+            <div class="reseaux"><a href="https://www.tiktok.com/@cuic_sw" target="_blank" rel="noopener noreferrer">Tiktok</a></div>
+            <div class="reseaux"><a href="https://www.youtube.com/channel/UCNMO2uZgnOW5L9tysI4VABQ" target="_blank" rel="noopener noreferrer">Youtube</a></div>
+            <div class="reseaux"><a href="https://www.instagram.com/cuic.code/" target="_blank" rel="noopener noreferrer">Instagram</a></div>
+          </footer>
+        </div>
+      </div>
+  </section>
+  
+  <section id="Dîplome">
+    <div class="gauche">
+      <h2>Mes dîplome & cursus scolaire</h2>
+      <div class="organigramme">
+        <div class="box">
+          <h3>Brevet</h3>
+          <i>Avec mention "Bien" (2023)</i>
+        </div>
+      </div>
+    </div>
+    <div class="droite">
+      <div class="organigramme">
+        <div class="box">
+          <h3>Collège</h3>
+          <i></i>
+        </div>
+        <div class="box">
+          <h3>Lycée</h3>
+          <i>2d GT (Générale technologique)</i>
+        </div>
+        <div class="box">
+          <h3>Lycée</h3>
+          <i>STI2D</i>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="Experiance">
+    <div class="background">
+      <div class="gauche"></div>
+      <div class="droite"></div>
+    </div>
+    <!-- Site internet créé
+        twitfleur
+        game
+        agenda de vie -->
+    <div class="card">
+      <img src="https://static.vitrine.ynov.com/var/site/storage/images/4/0/9/1/31904-1-fre-FR/1026a2665af8-metier-developpeur-web-ynov.jpg" alt="Image Web">
+      <footer>
+        <h3>Développeur Web</h3>
+        <i>Je suis développeur depuis un peu près 2 ans et je me spécialise dans le web je me lance dans le freelance mais aime aussi le travaille d'équipe <br></i>
+        <button class="ouvrirPlus">Découvrir Mes Sites Web</button>
+      </footer>
+    </div>
+          <div class="card projet" style="height: 0;">
+            <img src="img/LaBresse.jpg" alt="">
+            <footer>
+              <h3>Accord des Montagnes</h3>
+              <i style="color: rgb(47, 255, 47);">Fini / Vendu</i>
+            </footer>
+          </div>
+          <div class="card projet" style="height: 0;">
+            <img src="https://img.freepik.com/vecteurs-libre/paquet-fleurs-printemps-dessine_23-2148828872.jpg" alt="">
+            <footer>
+              <h3>Twitfleur</h3>
+              <i style="color: yellow;">Base fini bug a réglé</i>
+            </footer>
+          </div>          
+          <div class="card projet" style="height: 0;">
+            <img src="https://i0.wp.com/technode.com/wp-content/uploads/2018/05/mini-games-1.jpg?fit=1200%2C835&ssl=1" alt="">
+            <footer>
+              <h3>Mini Game</h3>
+              <i style="color: red;">Début de développement</i>
+            </footer>
+          </div>          
+    <script>
+      const ButtonOuvrirPlus = document.querySelector('.ouvrirPlus');
+      const projets = document.querySelectorAll('.projet');
+      let Button = false;
+      console.log(Button);
+
+      ButtonOuvrirPlus.addEventListener('click', function() {
+        if (Button === false) {
+          ButtonOuvrirPlus.innerHTML = 'Fermer'
+          projets.forEach(projet => {
+            projet.classList.add('active');
+              projet.style.height = 'fit-content';
+          });
+          Button = true;
+        } else {
+          ButtonOuvrirPlus.innerHTML = 'Ouvrir Plus'
+          projets.forEach(projet => {
+            projet.classList.remove('active');
+            setTimeout(() => {
+              projet.style.height = '0';
+            }, 300);
+          });
+          Button = false;
+        }
+      });
+    </script>
+
+        <!-- Serveur bar espagne -->
+    <div class="card">
+      <img src="https://radiomontblanc.fr/photos/articles/vignettes/serveur3_24887.jpg" alt="Image service bar">
+      <footer>
+        <h3>Serveur</h3>
+        <i>J'ai eu l'occasion de servire des client dans un petit bar en Espagne, et cherche un petit boulot dans le monde de la réstauration</i>
+      </footer>    
+    </div>  
+  </section>
+
+
+  <section id="Contact">
+    <div class="gauche">
+      <div class="box">
+        <h3>Mes praincipaux contactes</h3>
+        <i>Numéro : <a href="tel:0677563272">06.77.56.32.72</a></i>
+        <i>E-mail : <a href="mailto:cuic.professional@gmail.com">cuic.professional@gmail.com</a></i>
+      </div>
+    </div>
+    <div class="droite">
+      <!-- <h3>Contacter Directement depuis se site</h3>
+      <form action="send.php" method="POST">
+        <div class="box">
+          <label for="nom">Votre Nom</label>
+          <input type="text" name="Nom" placeholder="Entrée votre nom">
+          <br>
+          <label for="messages">Votre Message</label>
+          <textarea name="message" placeholder="Ecriver votre messages ici"></textarea>
+          <br>
+          <input type="submit" value="Envoyer">
+        </div>
+      </form> -->
+      <div class="box">
+        <h3>Mon adresse</h3>
+        <i>Département : <a target="_blank" href="https://maps.google.com/maps?q=88700">88700</a></i>
+        <i>Ville : <a target="_blank" href="https://maps.google.com/maps?q=Bult">BULT</a></i>
+        <i>Adresse : <a target="_blank" href="https://maps.google.com/maps?q=13+Rue+des+Marronniers, Bult">13 rue des marroniers</a></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- <script>
+
+
+  var scene = new THREE.Scene();
+
+  var height = window.innerHeight;
+  var width = window.innerWidth;
+  const camera = new THREE.PerspectiveCamera( 45, width / height, 1, 1000 );
+  camera.position.x = 0
+  camera.position.y = 14
+  camera.position.z = 16
+  camera.rotation.x = 0
+  camera.rotation.y = 0
+  camera.rotation.z = 0
+
+  var myCanvas = document.getElementById('myCanvas');
+
+  var renderer = new THREE.WebGLRenderer({
+      antialias: true,
+      canvas: myCanvas,
+      alpha: true
+  });
+
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.gammaInput = true;
+  renderer.gammaOutput = true;
+  renderer.antialias = true;
+  document.body.appendChild( renderer.domElement );
+
+  orbit = new THREE.OrbitControls(camera, renderer.domElement);
+  orbit.maxPolarAngle = Math.PI / 2;
+  orbit.update();
+
+  var loader = new THREE.GLTFLoader();
+  loader.load('Carro5.glb', handle_load);
+
+  var mesh;
+
+function handle_load(gltf)
+{
+  mesh = gltf.scene;
+  scene.add( mesh );
+}
+
+render();
+
+var delta = 0;
+var prevTime = Date.now();
+
+function render() {
+  renderer.toneMappingExposure = Math.pow(0.7, 5.0);
+  renderer.render(scene, camera);
+
+  requestAnimationFrame(render);
+}
+</script> -->
+</body>
+</html>
