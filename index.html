@@ -36,7 +36,7 @@
             <button class="closeCard">&times;</button>
             <h3>Présentation</h3>
             <header>
-                <img src="Asset/moi.jpg" alt="Photo de Profile">
+                <img src="Asset/moiNew.jpg" alt="Photo de Profile">
                 <div class="Name">
                     <i>Adrien ✅</i>
                     <i>BUCH ✅</i>
@@ -48,7 +48,7 @@
         </div>
         <div class="card" id="CompétenceCard">
             <button class="closeCard">&times;</button>
-            <h3>Compétence</h3>
+            <h3>Compétences</h3>
             <ul>
                 <li><h4>Informatique</h4>
                     <span class="Ilangue p80">Html</span>
@@ -60,13 +60,18 @@
                     <span class="langue p80">Français</span>
                     <span class="langue p50">Anglais</span>
                     <span class="langue p10">Espagnole</span>
+                </li>                
+                <li><h4>Mécanique</h4>
+                    <span class="langue p70">Vélo</span>
+                    <span class="langue p30">Moto</span>
+                    <span class="langue p40">Voiture</span>
                     </li>
                 <li><h4>Scolarité</h4>
-                    <span>Collège Alphonce Cytère - Ramberviller</span>
-                    <span>Lycée Pierre Mendez France - Epinal</span>
-                    <span>STI2D en attente ... </span>
+                    <span><a href="https://maps.google.com/maps?q=Collège+Alphonce+Cytère">Collège Alphonce Cytère</a></span>
+                    <span><a href="https://maps.google.com/maps?q=Lycée+Pierre+Mendez+France">Lycée Pierre Mendez France</a></span>
+                    <span><a href="https://maps.google.com/maps?q=Lycée+Pierre+Mendez+France">STI2D en attente ... </a></span>
                     </li>
-                <li><h4>Dîplome</h4>
+                <li><h4>Dîplomes</h4>
                     <i>Brevet - Mention Bien</i>
                     </li>
             </ul>
@@ -76,21 +81,21 @@
             <h3>Mes Experiences</h3>
             <ul>
                 <li>Stage chez <a target="_blank" href="https://maps.google.com/maps?q=GLF+Creation+Golbey">GLF création</a></li>
-                <li>Dirigé une petite équipe de développeur</li>
-                <li>Serveur bar <a target="_blank" href="https://maps.google.com/maps?q=Chez+Paco+Espagne">"Chez Paco"</a> en Espagne</li>
+                <li>Direction d'une petite équipe de développeurs</li>
+                <li>Serveur au bar <a target="_blank" href="https://maps.google.com/maps?q=Chez+Paco+Espagne">"Chez Paco"</a> en Espagne</li>
             </ul>
         </div>
         <div class="card" id="IntérêtsCard">
             <button class="closeCard">&times;</button>
-            <h3>Centre d'Intérêt</h3>
+            <h3>Centres d'Intérêt</h3>
             <ul>
-                <li><h4>Dévelopement web</h4></li>
+                <li><h4>Développement web</h4></li>
                 <li><h4>Calisthénie</h4></li>
                 <li><h4>VTT - </h4>
-                    <i>Dirt</i>
+                    <i>Dirt ;</i>
                     <i>DownHill</i></li>
                 <li><h4>Musique - </h4>
-                    <i>Piano</i>
+                    <i>Piano ;</i>
                     <i>Guitare</i></li>
             </ul>
         </div>
@@ -106,10 +111,29 @@
         </div>
         <div class="card" id="ContactCard">
             <button class="closeCard">&times;</button>
-            <h3>Voici comment me contacter</h3>
+            <h3>Me contacter</h3>
             <ul>
                 <li><a href="tel:+3377563272">06.77.56.32.72</a></li>
                 <li><a href="mailto:cuic.profesionnal@gmail.com">Cuic.profesionnal@gmail.com</a></li>
+            </ul>
+        </div>
+        <div class="card" id="EmploieCard">
+            <button class="closeCard">&times;</button>
+            <h3>Je pourrais travailler dans :</h3>
+            <h4>Développement-Web :</h4>
+            <ul>
+                <li>Front End <span class="p80">80%</span></li>
+                <li>Direction d'équipe <span class="p70">70%</span></li>
+                <li>Back End <span class="p40">40%</span></li>
+            </ul>
+            <h4>Gastronomie :</h4>
+            <ul>
+                <li>Service Bar/Restaurant <span class="p70">70%</span></li>
+            </ul>
+            <h4>CyberSécurité :</h4>
+            <i>(Faible expérience)</i>
+            <ul>
+                <li>Ingénieur sécurité web <span class="p20">20%</span></li>
             </ul>
         </div>
     </section>
@@ -147,13 +171,15 @@
         var div3 = createDiv(-200, -100, "Expérience", "fa-solid fa-check");
         var div4 = createDiv(20, -170, "Intérêts", "fa-solid fa-folder-open");
         var div5 = createDiv(-70, 150, "Projet", "fa-solid fa-code");
-        var div6 = createDiv(170, -30, "Contact", "fa-solid fa-phone")
+        var div6 = createDiv(170, -30, "Contact", "fa-solid fa-phone");
+        var div7 = createDiv(180, 140, "Emploie", "fa-solid fa-search");
         container.appendChild(div1);
         container.appendChild(div2);
         container.appendChild(div3);
         container.appendChild(div4);
         container.appendChild(div5);
         container.appendChild(div6);
+        container.appendChild(div7);
 
         function createDiv(x, y, DivName, DivIcon) {
             var div = document.createElement('div');

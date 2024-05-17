@@ -32,7 +32,7 @@
     min-height: 10px;
     overflow: hidden;
     border-radius: 100px;
-    border: 2px solid var(--Argent);
+    border: 3px solid var(--Orange);
     background-color: var(--Blanc);
     position: relative;
 }
@@ -40,7 +40,7 @@
 .progress-bar-inner {
     height: 100%;
     border-right: 2px solid var(--Argent);
-    background-color: var(--Orange);
+    background-color: var(--Argent);
     position: absolute;
     top: 0;
     left: 0;
@@ -53,7 +53,7 @@
     filter: blur(5px);
     width: 15vh;
     height: 15vh;
-    background-color: var(--Orange);
+    background-color: var(--Argent);
     transition: all .3s ease;
     &:hover{scale: 1.05;}
     &.e1{border-radius: 48% 52% 64% 36% / 30% 42% 58% 70% ; top: 10vh; left: 20vw; width: 20vh;height: 20vh; z-index: -1;}
@@ -67,7 +67,7 @@ button {
     padding: 10px 20px;
     font-size: 1.2em;
     border-radius: 50px;
-    background-color: var(--Violet);
+    background-color: var(--Orange);
     color: #fff;
     border: none;
     cursor: pointer;
