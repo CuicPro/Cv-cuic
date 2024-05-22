@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     font-family: "Josefin Sans", sans-serif;
-    cursor : url(/Asset/point.png) 10 14, default;
+    cursor : url(Asset/point.png) 10 14, default;
 }
 :root{
     --Blanc: #ffffff;
@@ -34,7 +34,7 @@ body{
         left: var(--bg-pos-x);
         width: 110%;
         height: 110%;
-        background-image: url('/Asset/bg.jpg');
+        background-image: url('Asset/bg.jpg');
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
