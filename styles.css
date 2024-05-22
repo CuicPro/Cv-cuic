@@ -19,7 +19,29 @@
 
 body{
     overflow: hidden;
-
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    --bg-pos-x: 50%;
+    --bg-pos-y: 50%;
+    &::before {
+        content: '';
+        position: fixed; /* Change from absolute to fixed */
+        top: var(--bg-pos-y);
+        left: var(--bg-pos-x);
+        width: 110%;
+        height: 110%;
+        background-image: url('/Asset/bg.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        transition: transform 0.1s ease-out;
+    }
 
     #Loader{
         position: absolute;

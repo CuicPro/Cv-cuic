@@ -47,7 +47,7 @@
             </header>
         </div>
         <div class="card" id="CompétenceCard">
-            <button class="closeCard">&times;</button>
+            <button class="closeCard">&times;"></button>
             <h3>Compétences</h3>
             <ul>
                 <li><h4>Informatique</h4>
@@ -106,8 +106,6 @@
                 <li><a target="_blank" href="https://street-search.000webhostapp.com/">Street-Search.com</a></li>
                 <li><a target="_blank" href="https://accordsdesmontagnes.com/">Accords Des Montagne</a></li>
             </ul>
-            
-            
         </div>
         <div class="card" id="ContactCard">
             <button class="closeCard">&times;</button>
@@ -138,7 +136,6 @@
         </div>
     </section>
     
-
     <div id="container"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -150,19 +147,27 @@
         var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         camera.position.z = 5;
 
-        // Créer un moteur de rendu
-        var renderer = new THREE.WebGLRenderer();
+        // Créer un moteur de rendu avec alpha pour la transparence
+        var renderer = new THREE.WebGLRenderer({ alpha: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0x000000, 0); // Couleur de fond transparente
         document.body.appendChild(renderer.domElement);
 
         // Créer une sphère
         var sphereGeometry = new THREE.SphereGeometry(2.5, 1280, 1280);
         var textureLoader = new THREE.TextureLoader();
         var texture = textureLoader.load('8k_mercury.jpg');
-        var sphereMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000, wireframe: true });
         var sphereMaterial = new THREE.MeshBasicMaterial({ map: texture });
         var sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
         scene.add(sphere);
+
+        var planeGeometry = new THREE.PlaneGeometry(500, 500);
+        var planeMaterial = new THREE.ShadowMaterial({ opacity: 0.2 });
+        var plane = new THREE.Mesh(planeGeometry, planeMaterial);
+        plane.rotation.x = -Math.PI / 2;
+        plane.position.y = -5;
+        plane.receiveShadow = true;
+        scene.add(plane);
 
         // Positionner les éléments HTML à des coordonnées précises
         var container = document.getElementById('container');
@@ -209,15 +214,12 @@
             targetPosition.set(mouseX, mouseY, 0); // Utiliser la position de la souris comme cible de déplacement de la sphère
         });
 
-
-
         // Animation de la sphère
         function animateSphere() {
             // Si la souris est en mouvement, continuer à mettre à jour la position de la sphère
             if (isMouseMoving) {
                 // Interpolation de la position de la sphère pour un mouvement fluide
                 sphere.position.lerp(targetPosition, lerpFactor);
-                //targetPosition.multiplyScalar(inertiaFactor);
             }
             // Mettre à jour la position de chaque div en fonction de la position de la sphère
             var screenPosition = new THREE.Vector3();
@@ -242,89 +244,100 @@
             renderer.render(scene, camera);
         }
         animate();
-// Sélectionne toutes les divs ayant la classe "element"
-const elements = document.querySelectorAll('.element');
 
-// Fonction pour suivre le mouvement de la souris et effectuer un zoom sur la planète lorsque la souris survole une div
-function suivreSouris(event) {
-    // Position de la souris        
-    const mouseX = event.clientX;
-    const mouseY = event.clientY;
+        // Sélectionne toutes les divs ayant la classe "element"
+        const elements = document.querySelectorAll('.element');
 
-    // Parcours de chaque élément
-    elements.forEach(element => {
-        // Position de l'élément
-        const rect = element.getBoundingClientRect();
-        const elementX = rect.left + rect.width / 2;
-        const elementY = rect.top + rect.height / 2;
+        // Fonction pour suivre le mouvement de la souris et effectuer un zoom sur la planète lorsque la souris survole une div
+        function suivreSouris(event) {
+            // Position de la souris        
+            const mouseX = event.clientX;
+            const mouseY = event.clientY;
 
-        // Calcul de la distance entre la souris et l'élément
-        const distance = Math.sqrt((mouseX - elementX) ** 2 + (mouseY - elementY) ** 2);
+            // Parcours de chaque élément
+            elements.forEach(element => {
+                // Position de l'élément
+                const rect = element.getBoundingClientRect();
+                const elementX = rect.left + rect.width / 2;
+                const elementY = rect.top + rect.height / 2;
 
-    });
-}
-
-// Ajoute un écouteur d'événement pour suivre le mouvement de la souris sur chaque élément
-elements.forEach(element => {
-    element.addEventListener('mousemove', suivreSouris);
-});
-// Fonction pour ouvrir la carte correspondant à la div cliquée
-function ouvrirCarte(event) {
-    setTimeout(function() {
-        const dataName = event.target.getAttribute('dataName');
-        console.log(dataName);
-        if (dataName) {
-            const idCarte = dataName + 'Card'; // Obtenez l'ID de la carte correspondante à la div cliquée
-            console.log(idCarte);
-            const carte = document.getElementById(idCarte); // Récupérez la carte correspondante
-            // Affichez la carte en la rendant visible
-            if (carte) {
-                carte.classList.add('active');
-                console.log(carte);
-            }
+                // Calcul de la distance entre la souris et l'élément
+                const distance = Math.sqrt((mouseX - elementX) ** 2 + (mouseY - elementY) ** 2);
+            });
         }
-    },10);
-}
 
-// Attachez la fonction d'ouverture de carte à chaque div
-elements.forEach(element => {
-    element.addEventListener('click', ouvrirCarte);
-});
+        // Ajoute un écouteur d'événement pour suivre le mouvement de la souris sur chaque élément
+        elements.forEach(element => {
+            element.addEventListener('mousemove', suivreSouris);
+        });
 
+        // Fonction pour ouvrir la carte correspondant à la div cliquée
+        function ouvrirCarte(event) {
+            setTimeout(function() {
+                const dataName = event.target.getAttribute('dataName');
+                console.log(dataName);
+                if (dataName) {
+                    const idCarte = dataName + 'Card'; // Obtenez l'ID de la carte correspondante à la div cliquée
+                    console.log(idCarte);
+                    const carte = document.getElementById(idCarte); // Récupérez la carte correspondante
+                    // Affichez la carte en la rendant visible
+                    if (carte) {
+                        carte.classList.add('active');
+                        console.log(carte);
+                    }
+                }
+            },10);
+        }
 
-// Attachez la fonction d'ouverture de carte à chaque div
-elements.forEach(element => {
-    element.addEventListener('click', ouvrirCarte);
-});
+        // Attachez la fonction d'ouverture de carte à chaque div
+        elements.forEach(element => {
+            element.addEventListener('click', ouvrirCarte);
+        });
 
-// Fermez la carte lorsque l'utilisateur clique en dehors de la carte
-document.addEventListener('click', function(event) {
-    console.log('click');
-    // Vérifiez si l'élément cliqué n'est pas une carte
-    if (!event.target.classList.contains('card active')) {
-        // Cachez toutes les cartes
-        console.log(event.target.classList.contains('card active'));
-        const cartes = document.querySelectorAll('.card');
-        cartes.forEach(carte => {
-            if (carte.classList.contains('active')){
-                carte.classList.add('notactive');         
-                setTimeout(function() {
-                    carte.classList.remove('notactive');
-                    carte.classList.remove('active');
-                }, 1000);
+        // Fermez la carte lorsque l'utilisateur clique en dehors de la carte
+        document.addEventListener('click', function(event) {
+            console.log('click');
+            // Vérifiez si l'élément cliqué n'est pas une carte
+            if (!event.target.classList.contains('card active')) {
+                // Cachez toutes les cartes
+                console.log(event.target.classList.contains('card active'));
+                const cartes = document.querySelectorAll('.card');
+                cartes.forEach(carte => {
+                    if (carte.classList.contains('active')){
+                        carte.classList.add('notactive');         
+                        setTimeout(function() {
+                            carte.classList.remove('notactive');
+                            carte.classList.remove('active');
+                        }, 1000);
+                    }
+                });
             }
         });
-    }
-});
 
-window.addEventListener('resize', function(){
-    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    console.log(window.innerWidth, window.innerHeight);
+    // Redimensionner le rendu lors du changement de taille de la fenêtre
+    window.addEventListener('resize', function() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+
     
-});
+    document.addEventListener('mousemove', function(event) {
+        const mouseX = event.clientX;
+        const mouseY = event.clientY;
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
 
+        // Calculer les décalages en pourcentage
+        const offsetX = (mouseX / windowWidth - 0.5) * 20; // ajuster le multiplicateur pour un effet plus ou moins prononcé
+        const offsetY = (mouseY / windowHeight - 0.5) * 20; // ajuster le multiplicateur pour un effet plus ou moins prononcé
 
-    </script>
+        // Appliquer les décalages à la position de l'arrière-plan du pseudo-élément
+        document.body.style.setProperty('--bg-pos-x', `calc(50% + ${offsetX}px)`);
+        document.body.style.setProperty('--bg-pos-y', `calc(50% + ${offsetY}px)`);
+    });
+</script>
+
 </body>
 </html>
