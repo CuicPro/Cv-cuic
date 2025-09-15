@@ -1,0 +1,81 @@
+#Loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+
+    & #loadingText{
+        color: var(--Orange);
+    }
+
+    & i {
+        color: var(--Blanc);
+    }
+}
+
+#Loader h2, h3{
+    margin-bottom: 20px;
+    color: var(--Orange);
+    text-shadow: 1px 0px var(--Noir);
+}
+
+.progress-bar {
+    width: 30vw;
+    height: 20px;
+    min-height: 10px;
+    overflow: hidden;
+    border-radius: 100px;
+    border: 3px solid var(--Orange);
+    background-color: var(--Blanc);
+    position: relative;
+}
+
+.progress-bar-inner {
+    height: 100%;
+    border-right: 2px solid var(--Argent);
+    background-color: var(--Argent);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+    transition: all .3s;
+}
+
+.effect{
+    position: absolute;
+    filter: blur(5px);
+    width: 15vh;
+    height: 15vh;
+    background-color: var(--Argent);
+    transition: all .3s ease;
+    &:hover{scale: 1.05;}
+    &.e1{border-radius: 48% 52% 64% 36% / 30% 42% 58% 70% ; top: 10vh; left: 20vw; width: 20vh;height: 20vh; z-index: -1;}
+    &.e2{border-radius: 78% 22% 64% 36% / 57% 73% 27% 43% ; top: 40vh; left: 60vw; width: 25vh;height: 25vh; z-index: -1;}
+    &.e3{border-radius: 24% 76% 53% 47% / 47% 52% 48% 53% ; top: 70vh; left: 10vw; width: 10vh;height: 10vh; z-index: -1;}
+    &.e4{border-radius: 24% 76% 61% 39% / 29% 86% 14% 71% ; top: 10vh; left: 90vw; width: 10vh;height: 10vh; z-index: -1;}
+    &.e5{border-radius: 24% 76% 53% 47% / 47% 52% 48% 53% ; top: 80vh; left: 60vw; width: 15vh;height: 15vh; z-index: -1;}
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 50px;
+    background-color: var(--Orange);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+
+
+    &:disabled{
+        color: var(--Argent);
+        background-color: var(--Blanc);
+        cursor: wait;
+    }
+}

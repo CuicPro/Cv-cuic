@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Adrien BUCH</title>
+    <link rel="icon" href="Asset/moiNew.jpg" type="image/icon type">    
+
+    <link rel="stylesheet" href="loader.css">
+    <script src="loader.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <section id="Loader">
+        <h2>Chargement des ressources ...</h2>
+        <h3>BUCH Adrien</h3>
+        <i>(Pseudonyme: Cuic)</i>
+        <div class="progress-bar">
+            <div class="progress-bar-inner" style="width: 0%;"></div>
+        </div>
+        <p id="loadingText">0%</p>
+
+        <div class="effect e1"></div>
+        <div class="effect e2"></div>
+        <div class="effect e3"></div>
+        <div class="effect e4"></div>
+        <div class="effect e5"></div>
+
+        <button disabled >Y aller <i class="fa-solid fa-arrow-up"></i></button>
+    </section>
+
+    <section id="CardsContainer">
+        <!-- Contenu des cartes -->
+        <div class="card" id="PrésentationCard">
+            <button class="closeCard">&times;</button>
+            <h3>Présentation</h3>
+            <header>
+                <img src="Asset/moiNew.jpg" alt="Photo de Profile">
+                <div class="Name">
+                    <i>Adrien ✅</i>
+                    <i>BUCH ✅</i>
+                    <i>24/07/2008 🎂</i>
+                    <i>Fondateur <a target="_blank" href="https://street-search.000webhostapp.com/">Street-Search 👨‍💼</a></i>
+                    <i>Développeur-Web 👨‍💻</i>
+                </div>
+            </header>
+        </div>
+        <div class="card" id="CompétenceCard">
+            <button class="closeCard">&times;"></button>
+            <h3>Compétences</h3>
+            <ul>
+                <li><h4>Informatique</h4>
+                    <span class="Ilangue p80">Html</span>
+                    <span class="Ilangue p90">Css</span>
+                    <span class="Ilangue p40">Js</span>
+                    <span class="Ilangue p20">PHP</span>
+                    </li>
+                <li><h4>Langue</h4>
+                    <span class="langue p80">Français</span>
+                    <span class="langue p50">Anglais</span>
+                    <span class="langue p10">Espagnol</span>
+                </li>                
+                <li><h4>Mécanique</h4>
+                    <span class="langue p70">Vélo</span>
+                    <span class="langue p30">Moto</span>
+                    <span class="langue p40">Voiture</span>
+                    </li>
+                <li><h4>Scolarité</h4>
+                    <span><a href="https://maps.google.com/maps?q=Collège+Alphonce+Cytère">Collège Alphonce Cytère</a></span>
+                    <span><a href="https://maps.google.com/maps?q=Lycée+Pierre+Mendez+France">Lycée Pierre Mendez France</a></span>
+                    <span><a href="https://maps.google.com/maps?q=Lycée+Pierre+Mendez+France">STI2D en attente ... </a></span>
+                    </li>
+                <li><h4>Dîplomes</h4>
+                    <i>Brevet - Mention Bien</i>
+                    </li>
+            </ul>
+        </div> 
+        <div class="card" id="ExpérienceCard">
+            <button class="closeCard">&times;</button>
+            <h3>Mes Experiences</h3>
+            <ul>
+                <li>Stage chez <a target="_blank" href="https://maps.google.com/maps?q=GLF+Creation+Golbey">GLF création</a></li>
+                <li>Direction d'une petite équipe de développeurs</li>
+                <li>Serveur au bar <a target="_blank" href="https://maps.google.com/maps?q=Chez+Paco+Espagne">"Chez Paco"</a> en Espagne</li>
+            </ul>
+        </div>
+        <div class="card" id="IntérêtsCard">
+            <button class="closeCard">&times;</button>
+            <h3>Centres d'Intérêt</h3>
+            <ul>
+                <li><h4>Développement web</h4></li>
+                <li><h4>Calisthénie</h4></li>
+                <li><h4>VTT - </h4>
+                    <i>Dirt ;</i>
+                    <i>DownHill</i></li>
+                <li><h4>Musique - </h4>
+                    <i>Piano ;</i>
+                    <i>Guitare</i></li>
+            </ul>
+        </div>
+        <div class="card" id="ProjetCard">
+            <button class="closeCard">&times;</button>
+            <h3>Mes Projets</h3>
+            <ul>
+                <li><a target="_blank" href="https://street-search.000webhostapp.com/">Street-Search.com</a></li>
+                <li><a target="_blank" href="https://accordsdesmontagnes.com/">Accords Des Montagne</a></li>
+            </ul>
+        </div>
+        <div class="card" id="ContactCard">
+            <button class="closeCard">&times;</button>
+            <h3>Me contacter</h3>
+            <ul>
+                <li><a href="tel:+3377563272">06.77.56.32.72</a></li>
+                <li><a href="mailto:cuic.profesionnal@gmail.com">Cuic.profesionnal@gmail.com</a></li>
+            </ul>
+        </div>
+        <div class="card" id="EmploieCard">
+            <button class="closeCard">&times;</button>
+            <h3>Je pourrais travailler dans :</h3>
+            <h4>Développement-Web :</h4>
+            <ul>
+                <li>Front End <span class="p80">80%</span></li>
+                <li>Direction d'équipe <span class="p70">70%</span></li>
+                <li>Back End <span class="p40">40%</span></li>
+            </ul>
+            <h4>Gastronomie :</h4>
+            <ul>
+                <li>Service Bar/Restaurant <span class="p70">70%</span></li>
+            </ul>
+            <h4>CyberSécurité :</h4>
+            <i>(Faible expérience)</i>
+            <ul>
+                <li>Ingénieur sécurité web <span class="p20">20%</span></li>
+            </ul>
+        </div>
+    </section>
+    
+    <div id="container"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // Créer une scène
+        var scene = new THREE.Scene();
+
+        // Créer une caméra
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 5;
+
+        // Créer un moteur de rendu avec alpha pour la transparence
+        var renderer = new THREE.WebGLRenderer({ alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0x000000, 0); // Couleur de fond transparente
+        document.body.appendChild(renderer.domElement);
+
+        // Créer une sphère
+        var sphereGeometry = new THREE.SphereGeometry(2.5, 1280, 1280);
+        var textureLoader = new THREE.TextureLoader();
+        var texture = textureLoader.load('8k_mercury.jpg');
+        var sphereMaterial = new THREE.MeshBasicMaterial({ map: texture });
+        var sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+        scene.add(sphere);
+
+        var planeGeometry = new THREE.PlaneGeometry(500, 500);
+        var planeMaterial = new THREE.ShadowMaterial({ opacity: 0.2 });
+        var plane = new THREE.Mesh(planeGeometry, planeMaterial);
+        plane.rotation.x = -Math.PI / 2;
+        plane.position.y = -5;
+        plane.receiveShadow = true;
+        scene.add(plane);
+
+        // Positionner les éléments HTML à des coordonnées précises
+        var container = document.getElementById('container');
+        var div1 = createDiv(0, 0, "Présentation", 'fa-solid fa-user');
+        var div2 = createDiv(70, 100, "Compétence", "fa-solid fa-fire");
+        var div3 = createDiv(-200, -100, "Expérience", "fa-solid fa-check");
+        var div4 = createDiv(20, -170, "Intérêts", "fa-solid fa-folder-open");
+        var div5 = createDiv(-70, 150, "Projet", "fa-solid fa-code");
+        var div6 = createDiv(170, -30, "Contact", "fa-solid fa-phone");
+        var div7 = createDiv(180, 140, "Emploie", "fa-solid fa-search");
+        container.appendChild(div1);
+        container.appendChild(div2);
+        container.appendChild(div3);
+        container.appendChild(div4);
+        container.appendChild(div5);
+        container.appendChild(div6);
+        container.appendChild(div7);
+
+        function createDiv(x, y, DivName, DivIcon) {
+            var div = document.createElement('div');
+            div.className = 'element';
+            div.setAttribute('dataName', DivName);
+            div.setAttribute('Title', DivName);
+            div.style.left = x + 'px';
+            div.style.top = y + 'px';
+
+            var Icon = document.createElement('i');
+            Icon.className = DivIcon;
+            div.appendChild(Icon);
+            return div;
+        }
+
+        // Variables pour l'interpolation de la position de la sphère
+        var targetPosition = new THREE.Vector3();
+        var lerpFactor = 0.1; // Facteur de lissage pour l'interpolation
+        var inertiaFactor = 0.9; // Facteur d'inertie pour simuler l'énergie cinétique
+
+        var isMouseMoving = true;
+
+        // Gérer les mouvements de la souris
+        document.addEventListener('mousemove', function(event) {
+            var mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+            var mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+            targetPosition.set(mouseX, mouseY, 0); // Utiliser la position de la souris comme cible de déplacement de la sphère
+        });
+
+        // Animation de la sphère
+        function animateSphere() {
+            // Si la souris est en mouvement, continuer à mettre à jour la position de la sphère
+            if (isMouseMoving) {
+                // Interpolation de la position de la sphère pour un mouvement fluide
+                sphere.position.lerp(targetPosition, lerpFactor);
+            }
+            // Mettre à jour la position de chaque div en fonction de la position de la sphère
+            var screenPosition = new THREE.Vector3();
+            var worldPosition = new THREE.Vector3();
+            var containerRect = container.getBoundingClientRect();
+            scene.updateMatrixWorld();
+            for (var i = 0; i < container.children.length; i++) {
+                var div = container.children[i];
+                screenPosition.set(parseFloat(div.style.left) + containerRect.left, parseFloat(div.style.top) + containerRect.top, 0);
+                worldPosition.setFromMatrixPosition(sphere.matrixWorld);
+                worldPosition.project(camera);
+                screenPosition.x = (worldPosition.x + 1) * window.innerWidth / 2; // Inverser la direction horizontale
+                screenPosition.y = -(worldPosition.y - 1) * window.innerHeight / 2; // Inverser la direction verticale
+                div.style.transform = 'translate(-50%, -50%) translate(' + screenPosition.x + 'px,' + screenPosition.y + 'px)';
+            }
+        }
+
+        // Animation globale
+        function animate() {
+            requestAnimationFrame(animate);
+            animateSphere();
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Sélectionne toutes les divs ayant la classe "element"
+        const elements = document.querySelectorAll('.element');
+
+        // Fonction pour suivre le mouvement de la souris et effectuer un zoom sur la planète lorsque la souris survole une div
+        function suivreSouris(event) {
+            // Position de la souris        
+            const mouseX = event.clientX;
+            const mouseY = event.clientY;
+
+            // Parcours de chaque élément
+            elements.forEach(element => {
+                // Position de l'élément
+                const rect = element.getBoundingClientRect();
+                const elementX = rect.left + rect.width / 2;
+                const elementY = rect.top + rect.height / 2;
+
+                // Calcul de la distance entre la souris et l'élément
+                const distance = Math.sqrt((mouseX - elementX) ** 2 + (mouseY - elementY) ** 2);
+            });
+        }
+
+        // Ajoute un écouteur d'événement pour suivre le mouvement de la souris sur chaque élément
+        elements.forEach(element => {
+            element.addEventListener('mousemove', suivreSouris);
+        });
+
+        // Fonction pour ouvrir la carte correspondant à la div cliquée
+        function ouvrirCarte(event) {
+            setTimeout(function() {
+                const dataName = event.target.getAttribute('dataName');
+                console.log(dataName);
+                if (dataName) {
+                    const idCarte = dataName + 'Card'; // Obtenez l'ID de la carte correspondante à la div cliquée
+                    console.log(idCarte);
+                    const carte = document.getElementById(idCarte); // Récupérez la carte correspondante
+                    // Affichez la carte en la rendant visible
+                    if (carte) {
+                        carte.classList.add('active');
+                        console.log(carte);
+                    }
+                }
+            },10);
+        }
+
+        // Attachez la fonction d'ouverture de carte à chaque div
+        elements.forEach(element => {
+            element.addEventListener('click', ouvrirCarte);
+        });
+
+        // Fermez la carte lorsque l'utilisateur clique en dehors de la carte
+        document.addEventListener('click', function(event) {
+            console.log('click');
+            // Vérifiez si l'élément cliqué n'est pas une carte
+            if (!event.target.classList.contains('card active')) {
+                // Cachez toutes les cartes
+                console.log(event.target.classList.contains('card active'));
+                const cartes = document.querySelectorAll('.card');
+                cartes.forEach(carte => {
+                    if (carte.classList.contains('active')){
+                        carte.classList.add('notactive');         
+                        setTimeout(function() {
+                            carte.classList.remove('notactive');
+                            carte.classList.remove('active');
+                        }, 1000);
+                    }
+                });
+            }
+        });
+
+    // Redimensionner le rendu lors du changement de taille de la fenêtre
+    window.addEventListener('resize', function() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+
+    
+    document.addEventListener('mousemove', function(event) {
+        const mouseX = event.clientX;
+        const mouseY = event.clientY;
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+
+        // Calculer les décalages en pourcentage
+        const offsetX = (mouseX / windowWidth - 0.5) * 20; // ajuster le multiplicateur pour un effet plus ou moins prononcé
+        const offsetY = (mouseY / windowHeight - 0.5) * 20; // ajuster le multiplicateur pour un effet plus ou moins prononcé
+
+        // Appliquer les décalages à la position de l'arrière-plan du pseudo-élément
+        document.body.style.setProperty('--bg-pos-x', `calc(50% + ${offsetX}px)`);
+        document.body.style.setProperty('--bg-pos-y', `calc(50% + ${offsetY}px)`);
+    });
+</script>
+
+</body>
+</html>

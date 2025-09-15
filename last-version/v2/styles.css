@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Josefin Sans", sans-serif;
+    cursor : url(Asset/point.png) 10 14, default;
+}
+:root{
+    --Blanc: #ffffff;
+    --ShadowBlanc: #ffffff80;
+    --Noir: #000000;
+    --ShadowNoir: #00000080;
+    --Bleu: #003366;
+    --Argent:#CCCCCC;
+    --Violet:#663399;
+    --Orange:#FF7F50;
+}
+
+body{
+    overflow: hidden;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    --bg-pos-x: 50%;
+    --bg-pos-y: 50%;
+    &::before {
+        content: '';
+        position: fixed; /* Change from absolute to fixed */
+        top: var(--bg-pos-y);
+        left: var(--bg-pos-x);
+        width: 110%;
+        height: 110%;
+        background-image: url('Asset/bg.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        transition: transform 0.1s ease-out;
+    }
+
+    #Loader{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        z-index: 100000000;
+        background-color: black;
+    }
+
+    & #container { position: absolute; width: 100%; height: 100%; }
+    & .element { 
+        position: absolute; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 40px;
+        height: 40px; 
+
+        padding: 10px;
+        border-radius: 50%;
+        background: rgba( 255, 255, 255, 0.3 );
+        box-shadow: 0 8px 32px 0 #00000080;
+        backdrop-filter: blur( 6px );
+        -webkit-backdrop-filter: blur( 6px );
+        transform-origin: center center;
+        border: 1px solid rgba(255, 255, 255, 0.105);        cursor: pointer;
+        transition: all .3s; /* Ajout d'une transition douce */
+
+        &:hover{
+            width: 50px;
+            height:  50px;
+        }
+    }
+}
+.planet-zoom {
+    transition: transform 0.5s ease; /* Durée et fonction d'animation de la transition */
+}
+.card{
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    opacity: 0;
+    max-height: 70vh;
+    max-width: 90vw;
+    & button{
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        padding: 10px;
+        border-radius: 50px;
+        width: 40px;
+        height: 40px;
+        outline: 2px solid var(--Argent);
+        color: #000000;
+        background-color: #ffffff80;
+        transition: all .3s ease;
+        &:hover{
+            scale: 1.1;
+        }
+    }
+    &#CompétenceCard{
+        min-width: 65vw;
+        & span{
+            & a{
+                position: relative;
+                color: var(--Blanc);
+                transition: all .3s ease;
+                text-decoration: underline;
+                &::before{
+                    content: "";
+                    display: none;
+                    position: absolute;
+                    bottom: -3px;
+                    width: 100%;
+                    height: 3px;
+                    transition: all .5s ease;
+                    background-color: var(--Argent);
+                }
+                &:hover{
+                    transform: translateX(20px);
+                    scrollbar-width: 1.01;
+                }
+            }
+        }
+        @media (max-width: 900px) {
+            min-width: 85vw;
+        }
+    }
+    &#EmploieCard{
+        & h4, i{
+            height: 0px;
+        }
+        & ul{
+            flex: 1;
+            flex-wrap: nowrap;
+            width: 100%;
+            & li{
+               width: 100%;
+               align-content: flex-end;
+               & h4{
+                word-wrap: unset;
+                word-break: keep-all;
+               }
+            }
+        }
+    }    
+
+
+
+    & header{
+        display: flex;
+        gap: 20px;
+        & img{
+            border-radius: 50%;
+            width: 15vw;
+            height: 15vw;
+            object-fit: cover;
+        }
+        & .Name{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    & ul{
+        display: flex;
+        list-style: none;
+        flex-wrap: wrap;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        gap: 10px;
+        &::-webkit-scrollbar{width: 0;}
+        & li{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: auto;
+            flex-wrap: wrap;
+            gap: 5px;
+            padding: 20px;
+            border-radius: 10px;
+            color: var(--Blanc);
+            background-color: #00000080;
+            & a{
+                position: relative;
+                color: var(--Blanc);
+                transition: all .3s ease;
+                text-decoration: none;
+                &::before{
+                    content: "";
+                    position: absolute;
+                    bottom: -3px;
+                    width: 100%;
+                    height: 3px;
+                    transition: all .5s ease;
+                    background-color: var(--Argent);
+                }
+                &:hover{
+                    &::before{
+                        bottom: -7px;
+                        border-radius: 5px;
+                    }
+                    scale: 1.1;
+                }
+            }
+
+
+
+            & span{
+                z-index: 1;
+                position: relative;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 20px;
+                padding: 5px;
+                border-radius: 10px;
+                border: 2px solid var(--Blanc);
+                &:nth-child(1){margin-top: 10px;}
+                &::before{
+                    content: "";
+                    z-index: -1;
+                    position: absolute;
+                    left: 0;
+                    border-radius: 8px;
+                    width: 100%;
+                    height: 100%;
+                    background-color: var(--Orange);
+                }
+                &.p10::before{width: 10%;}
+                &.p20::before{width: 20%;}
+                &.p30::before{width: 30%;}
+                &.p40::before{width: 40%;}
+                &.p50::before{width: 50%;}
+                &.p60::before{width: 60%;}
+                &.p70::before{width: 70%;}
+                &.p80::before{width: 80%;}
+                &.p90::before{width: 90%;}
+                &.p100::before{width: 100%;}
+            }
+            & i{
+                font-weight: 300;
+            }
+        }
+    }
+
+
+
+    &.active{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000000;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        height: fit-content;
+        padding: 20px;
+        border-radius: 20px;
+        background: #ffffff80;
+        backdrop-filter: blur(4px);
+        animation: fade .5s ease forwards;
+    }
+    &.notactive{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000000;
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        height: fit-content;
+        padding: 20px;
+        border-radius: 20px;
+        background: #ffffff80;
+        backdrop-filter: blur(4px);
+        animation: fadeReverse .5s ease forwards;
+    }
+}
+
+@keyframes fade {
+    from{opacity: 0; scale: 0.7;}
+    to{opacity: 1; scale: 1;}
+}
+@keyframes fadeReverse {
+    from{opacity: 1;}
+    to{opacity: 0; transform: translate(-50%, 100%);}
+}
