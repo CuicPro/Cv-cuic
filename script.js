@@ -1,14 +1,42 @@
-        // Cursor personnalisé
+        // Cursor personnalisé avec fluidité améliorée
         const cursor = document.querySelector('.cursor');
         const cursorDot = document.querySelector('.cursor-dot');
        
+        let mouseX = 0;
+        let mouseY = 0;
+        let cursorX = 0;
+        let cursorY = 0;
+        let dotX = 0;
+        let dotY = 0;
+       
+        // Capture de la position de la souris
         document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-           
-            cursorDot.style.left = (e.clientX - 2) + 'px';
-            cursorDot.style.top = (e.clientY - 2) + 'px';
+            mouseX = e.clientX;
+            mouseY = e.clientY;
         });
+       
+        // Animation fluide avec requestAnimationFrame
+        function animateCursor() {
+            // Le dot suit avec un léger delay (smooth mais réactif)
+            dotX += (mouseX - dotX) * 0.25;
+            dotY += (mouseY - dotY) * 0.25;
+           
+            // Le cursor suit avec plus de delay pour l'effet smooth
+            cursorX += (mouseX - cursorX) * 0.08;
+            cursorY += (mouseY - cursorY) * 0.08;
+           
+            // Application des positions
+            cursorDot.style.left = (dotX - 2) + 'px';
+            cursorDot.style.top = (dotY - 2) + 'px';
+           
+            cursor.style.left = (cursorX - 10) + 'px';
+            cursor.style.top = (cursorY - 10) + 'px';
+           
+            requestAnimationFrame(animateCursor);
+        }
+       
+        // Démarrage de l'animation
+        animateCursor();
 
         // Hover effects pour le cursor
         const hoverElements = document.querySelectorAll('a, button, .project, .skill-item, .contact-item');
